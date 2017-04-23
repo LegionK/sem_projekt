@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+   <user userID="2324">
+      <login>mark92</login>
+      <email>mark_z@gmail.com</email>
+      <account>
+         <type>Premium</type>
+         <orderID>4795634782030771</orderID>
+         <paymentmMethod>Card</paymentmMethod>
+         <expirationDate>2017-09-24</expirationDate>
+         <useThisMonth>true</useThisMonth>
+         <maxBitrate>512</maxBitrate>
+         <unavailableTracks>true</unavailableTracks>
+         <listenOffline>true</listenOffline>
+         <cache>C:\Users\Mark\AppData\Local\Spotify\Storage</cache>
+      </account>
+      <lastFmScrobbling>
+         <lastFmAccount>mark_z</lastFmAccount>
+         <periodicity>every track</periodicity>
+         <via>WI-FI</via>
+      </lastFmScrobbling>
+      <lastUseSettings>
+         <playlist playlistID="928111">Rolling Stones. Artist radio</playlist>
+         <track trackID="998251" coverID="78765">Rolling Stones - Paint It Black</track>
+         <durationPause>PT2M15S</durationPause>
+         <volume>50</volume>
+      </lastUseSettings>
+      <crossfadeDuration>5000</crossfadeDuration>
+      <normalizeVolume>true</normalizeVolume>
+      <repeat>song</repeat>
+      <snuffle>off</snuffle>
+      <queue>
+         <track trackID="87203" coverID="242">Kasabian — Club Foot</track>
+         <track trackID="1098" coverID="9986144">The Yardbirds — For Your Love</track>
+      </queue>
+      <notification>
+         <notificationEmail>false</notificationEmail>
+         <notificationPush>true</notificationPush>
+      </notification>
+      <proxy>
+         <proxyType>SOCKS4</proxyType>
+         <ip>103.35.169.145</ip>
+         <port>3128</port>
+      </proxy>
+      <sendReports>true</sendReports>
+   </user>
+   <user userID="422">
+      <login>sasha_qw</login>
+      <email>alex.sand@gmail.com</email>
+      <account>
+         <type>Free</type>
+         <maxBitrate>384</maxBitrate>
+         <unavailableTracks>false</unavailableTracks>
+         <listenOffline>false</listenOffline>
+         <cache>C:\Users\sasha\AppData\Local\Spotify\Storage</cache>
+      </account>
+      <lastUseSettings>
+         <playlist playlistID="2423">Recomendation user</playlist>
+         <track trackID="9132" coverID="3534">The Cramps — Fever</track>
+         <durationPause>PT1M45S</durationPause>
+         <volume>100</volume>
+      </lastUseSettings>
+      <crossfadeDuration>1000</crossfadeDuration>
+      <normalizeVolume>true</normalizeVolume>
+      <repeat>playlist</repeat>
+      <snuffle>songs</snuffle>
+      <queue>
+         <track trackID="7762" coverID="2511">Wanda Jackson — Slippin' and Slidin'</track>
+         <track trackID="9981104" coverID="12007">The Searchers — Wow Wow Baby</track>
+         <track trackID="11123" coverID="8871">The Hollies — He Ain't Heavy He's My Brother</track>
+      </queue>
+      <notification>
+         <notificationEmail>true</notificationEmail>
+         <notificationPush>true</notificationPush>
+      </notification>
+      <sendReports>false</sendReports>
+      <nextAd adID="23">
+         <playAfterTracks>3</playAfterTracks>
+         <adDuration>PT30S</adDuration>
+         <advVolume>70</advVolume>
+         <url>http://plzen.majales.cz/</url>
+         <image>http://plzen.majales.cz/img/illust/program2012-pruvod.png</image>
+      </nextAd>
+   </user>
+   <user userID="777615">
+      <login>kate_kate</login>
+      <email>katrin_vl@seznam.cz</email>
+      <account>
+         <type>Premium for Family</type>
+         <orderID>35353528421</orderID>
+         <memberNumber>5</memberNumber>
+         <paymentmMethod>Card</paymentmMethod>
+         <expirationDate>2017-12-20</expirationDate>
+         <useThisMonth>false</useThisMonth>
+         <maxBitrate>512</maxBitrate>
+         <unavailableTracks>true</unavailableTracks>
+         <listenOffline>true</listenOffline>
+         <cache>C:\Users\kate\AppData\Local\Spotify\Storage</cache>
+      </account>
+      <lastFmScrobbling>
+         <lastFmAccount>VenusTheMermaid</lastFmAccount>
+         <periodicity>every day</periodicity>
+         <via>WI-FI</via>
+         <via>data</via>
+      </lastFmScrobbling>
+      <lastUseSettings>
+         <playlist playlistID="12333">Dick Dale. Artist radio</playlist>
+         <track trackID="90008" coverID="703332">Dick Dale — Esperanza</track>
+         <durationPause>PT3M11S</durationPause>
+         <volume>20</volume>
+      </lastUseSettings>
+      <crossfadeDuration>10000</crossfadeDuration>
+      <normalizeVolume>false</normalizeVolume>
+      <repeat>next playlist</repeat>
+      <snuffle>off</snuffle>
+      <notification>
+         <notificationEmail>false</notificationEmail>
+         <notificationPush>false</notificationPush>
+      </notification>
+      <sendReports>false</sendReports>
+   </user>
+   <user userID="888716">
+      <login>Xtinct</login>
+      <email>arthur@gmail.com</email>
+      <account>
+         <type>Free</type>
+         <maxBitrate>384</maxBitrate>
+         <unavailableTracks>false</unavailableTracks>
+         <listenOffline>false</listenOffline>
+         <cache>C:\Users\ara\AppData\Local\Spotify\Storage</cache>
+      </account>
+      <lastUseSettings>
+         <playlist playlistID="2224">Dayli Mix</playlist>
+         <track trackID="91234" coverID="87111">Gorillaz — Let Me Out Ft. Mavis Staples Pusha T</track>
+         <durationPause>PT1M57S</durationPause>
+         <volume>90</volume>
+      </lastUseSettings>
+      <crossfadeDuration>5000</crossfadeDuration>
+      <normalizeVolume>true</normalizeVolume>
+      <repeat>off</repeat>
+      <snuffle>off</snuffle>
+      <notification>
+         <notificationEmail>true</notificationEmail>
+         <notificationPush>true</notificationPush>
+      </notification>
+      <proxy>
+         <proxyType>HTTPS</proxyType>
+         <ip>141.35.162.234</ip>
+         <port>8080</port>
+      </proxy>
+      <sendReports>false</sendReports>
+   </user>
+   <user userID="2324">
+      <login>ovarn</login>
+      <email>sanyratur@seznam.cz</email>
+      <account>
+         <type>Premium</type>
+         <orderID>479520307735</orderID>
+         <paymentmMethod>Card</paymentmMethod>
+         <expirationDate>2018-10-05</expirationDate>
+         <useThisMonth>false</useThisMonth>
+         <maxBitrate>512</maxBitrate>
+         <unavailableTracks>true</unavailableTracks>
+         <listenOffline>true</listenOffline>
+         <cache>C:\Users\ovarn\AppData\Local\Spotify\Storage</cache>
+      </account>
+      <lastUseSettings>
+         <playlist playlistID="1000097">Discover Weekly</playlist>
+         <track trackID="4310008" coverID="6100">Kanye West — Can't Tell Me Nothing</track>
+         <durationPause>PT2M15S</durationPause>
+         <volume>60</volume>
+      </lastUseSettings>
+      <crossfadeDuration>5000</crossfadeDuration>
+      <normalizeVolume>true</normalizeVolume>
+      <repeat>song</repeat>
+      <snuffle>off</snuffle>
+      <notification>
+         <notificationEmail>false</notificationEmail>
+         <notificationPush>false</notificationPush>
+      </notification>
+      <sendReports>true</sendReports>
+   </user>
+</users>

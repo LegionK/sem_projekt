@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <xs:element name="users">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="user" maxOccurs="unbounded" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="user">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="login" type="xs:string" />
+            <xs:element name="email" type="xs:string" />
+            <xs:element ref="account" />
+            <xs:element ref="lastFmScrobbling" minOccurs="0" />
+            <xs:element ref="lastUseSettings" />
+            <xs:element name="crossfadeDuration" type="crossfade" />
+            <xs:element name="normalizeVolume" type="xs:boolean" />
+            <xs:element name="repeat" type="repeat" />
+            <xs:element name="snuffle" type="snuffle" />
+            <xs:element ref="queue" minOccurs="0" />
+            <xs:element ref="notification" />
+            <xs:element ref="proxy" minOccurs="0" />
+            <xs:element name="sendReports" type="xs:boolean" />
+            <xs:element ref="nextAd" minOccurs="0" />
+         </xs:sequence>
+         <xs:attribute name="userID" type="xs:string" use="required" />
+      </xs:complexType>
+      <xs:unique name="unique-userID">
+         <xs:selector xpath="user" />
+         <xs:field xpath="@userID" />
+      </xs:unique>
+   </xs:element>
+   <xs:element name="account">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="type" type="typeAccount" />
+            <xs:element name="orderID" type="xs:positiveInteger" minOccurs="0" />
+            <xs:element name="memberNumber" type="familyMember" minOccurs="0" />
+            <xs:element name="paymentmMethod" type="payMethod" minOccurs="0" />
+            <xs:element name="expirationDate" type="xs:date" minOccurs="0" />
+            <xs:element name="useThisMonth" type="xs:boolean" minOccurs="0" />
+            <xs:element name="maxBitrate" type="bitrate" />
+            <xs:element name="unavailableTracks" type="xs:boolean" />
+            <xs:element name="listenOffline" type="xs:boolean" />
+            <xs:element name="cache" type="xs:string" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="lastFmScrobbling">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="lastFmAccount" type="xs:string" />
+            <xs:element name="periodicity" type="periodicity" />
+            <xs:element name="via" type="connection" maxOccurs="2" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="lastUseSettings">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="playlist" />
+            <xs:element ref="track" />
+            <xs:element name="durationPause" type="xs:duration" />
+            <xs:element name="volume" type="volume" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="playlist">
+      <xs:complexType mixed="true">
+         <xs:attribute name="playlistID" type="xs:positiveInteger" use="required" />
+      </xs:complexType>
+      <xs:unique name="unique-playlistID">
+         <xs:selector xpath="playlist" />
+         <xs:field xpath="@playlistID" />
+      </xs:unique>
+   </xs:element>
+   <xs:element name="track">
+      <xs:complexType mixed="true">
+         <xs:attribute name="coverID" type="xs:positiveInteger" use="required" />
+         <xs:attribute name="trackID" type="xs:positiveInteger" use="required" />
+      </xs:complexType>
+      <xs:unique name="unique-coverID">
+         <xs:selector xpath="track" />
+         <xs:field xpath="@coverID" />
+      </xs:unique>
+      <xs:unique name="unique-trackID">
+         <xs:selector xpath="track" />
+         <xs:field xpath="@trackID" />
+      </xs:unique>
+   </xs:element>
+   <xs:element name="queue">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="track" maxOccurs="unbounded" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="notification">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="notificationEmail" type="xs:boolean" />
+            <xs:element name="notificationPush" type="xs:boolean" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="proxy">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="proxyType" type="proxy" />
+            <xs:element name="ip" type="ip" />
+            <xs:element name="port" type="port" />
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="nextAd">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="playAfterTracks" type="xs:positiveInteger" />
+            <xs:element name="adDuration" type="xs:duration" />
+            <xs:element name="advVolume" type="volume" />
+            <xs:element name="url" type="xs:anyURI" />
+            <xs:element name="image" type="xs:anyURI" />
+         </xs:sequence>
+         <xs:attribute name="adID" type="xs:positiveInteger" use="required" />
+      </xs:complexType>
+      <xs:unique name="unique-adID">
+         <xs:selector xpath="nextAd" />
+         <xs:field xpath="@adID" />
+      </xs:unique>
+   </xs:element>
+   <xs:simpleType name="typeAccount">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Premium" />
+         <xs:enumeration value="Free" />
+         <xs:enumeration value="Premium for Family" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="payMethod">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Card" />
+         <xs:enumeration value="PayPal" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="bitrate">
+      <xs:restriction base="xs:integer">
+         <xs:enumeration value="128" />
+         <xs:enumeration value="384" />
+         <xs:enumeration value="512" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="periodicity">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="every track" />
+         <xs:enumeration value="every day" />
+         <xs:enumeration value="every hour" />
+         <xs:enumeration value="every 10 tracks" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="connection">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="WI-FI" />
+         <xs:enumeration value="data" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="volume">
+      <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0" />
+         <xs:maxInclusive value="100" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="crossfade">
+      <xs:restriction base="xs:integer">
+         <xs:minInclusive value="1000" />
+         <xs:maxInclusive value="15000" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="repeat">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="off" />
+         <xs:enumeration value="song" />
+         <xs:enumeration value="playlist" />
+         <xs:enumeration value="next playlist" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="snuffle">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="off" />
+         <xs:enumeration value="songs" />
+         <xs:enumeration value="playlists" />
+         <xs:enumeration value="all" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="proxy">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="HTTP" />
+         <xs:enumeration value="HTTPS" />
+         <xs:enumeration value="SOCKS4" />
+         <xs:enumeration value="SOCKS5" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="ip">
+      <xs:restriction base="xs:string">
+         <xs:pattern value="((((25[0-5])|(2[0-4][0-9])|([01]?[0-9]?[0-9]))\.){3}((25[0-5])|(2[0-4][0-9])|([01]?[0-9]?[0-9])))(\-((((25[0-5])|(2[0-4][0-9])|([01]?[0-9]?[0-9]))\.){3}((25[0-5])|(2[0-4][0-9])|([01]?[0-9]?[0-9]))))?" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="port">
+      <xs:restriction base="xs:integer">
+         <xs:minInclusive value="0" />
+         <xs:maxInclusive value="65535" />
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="familyMember">
+      <xs:restriction base="xs:integer">
+         <xs:minInclusive value="1" />
+         <xs:maxInclusive value="5" />
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

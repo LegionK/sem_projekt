@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dokumentace</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .topbutton {
+            width:100px;
+            border:2px solid #ccc;
+            background:#f7f7f7;
+            text-align:center;
+            padding:10px;
+            position:fixed;
+            bottom:50px;
+            left:50px;
+            cursor:pointer;
+            color:#333;
+            font-family:verdana;
+            font-size:12px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            }
+    </style>
+ </head>
+    
+<body>
+    <a href="#" title="Вернуться к началу" class="topbutton">^UP</a>
+
+<div class="container">
+  <header>
+    <div class="jumbotron">
+      <h1>Spotify</h1>      
+      <p>Realna aplikace, ktera povoluje kupovat a poslouchat hudbu</p>
+    </div>
+  </header>
+ 
+       
+    
+  
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="#uvod">Uvod</a></li>
+        <li><a href="#elements">Elementy</a></li>
+        <li><a href="#type">Typy</a></li>
+        <li><a href="#footer">Paticka</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+      <h1 id="uvod">Uvod</h1>
+      <div class="container">
+      <ul>
+          <li>Na Spotify jsou miliony písní. Přehrávej si své oblíbence, objevuj nové skladby a vytvoř si úžasnou sbírku. </li>
+          <li>Najdete zde hotové playlisty sestavené hudebními fanoušky a odborníky. Vybírej si podle nálady. </li>
+          <li>Poslechni si nejnovější singly a alba tohoto týdne a mrkni na žhavé hity v žebříčku Top 50. </li>
+      </ul>
+      </div>
+      
+    <h2 id="elements">Elementy</h2>
+    <table class="elements table ">
+      <caption>Seznam elementu</caption>
+        <thead>
+          <tr class="info">
+            <th>Name</th>
+            <th>type</th>
+            <th>minOccurs</th>
+            <th>maxOccurs</th>
+            <th>Co znamena?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>login</td>
+            <td>xs:string</td>
+            <td>1</td>
+            <td>1</td>
+            <td>uzivatelske jmeno</td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td>xs:string</td>
+            <td>1</td>
+            <td>1</td>
+            <td>email uzivatele</td>
+          </tr>
+          <tr>
+            <td><a href="#account">account</a></td>
+            <td>xs:complexType</td>
+            <td>1</td>
+            <td>1</td>
+            <td>ucet uzivatele</td>
+          </tr>
+          <tr>
+            <td><a href="#lastFmScrobbling">lastFmScrobbling</a></td>
+            <td>xs:complexType</td>
+            <td>1</td>
+            <td>1</td>
+            <td>nastaveni skroblingu</td>
+          </tr>
+          <tr>
+              <td><a href="#lastUseSettings">lastUseSettings</a></td>
+            <td>xs:complexType</td>
+            <td>1</td>
+            <td>1</td>
+            <td>Nastaveni playlistu</td>
+          </tr>
+          <tr>
+            <td>crossfadeDuration</td>
+            <td><a href="#crossfade">crossfade</a></td>
+            <td>1</td>
+            <td>1</td>
+            <td>crossfade</td>
+          </tr>
+          <tr>
+            <td>normalizeVolume</td>
+            <td>xs:boolean</td>
+            <td>1</td>
+            <td>1</td>
+            <td>stejna hlasitost</td>
+          </tr>
+          <tr>
+            <td>repeat</td>
+            <td><a href="#repeat">repeat</a></td>
+            <td>1</td>
+            <td>1</td>
+            <td>druh opakovani</td>
+          </tr>
+          <tr>
+            <td>snuffle</td>
+            <td><a href="#snuffle">snuffle</a></td>
+            <td>1</td>
+            <td>1</td>
+            <td>druh michani</td>
+          </tr>
+          <tr>
+              <td><a href="#queue">queue</a></td>
+            <td>xs:complexType</td>
+            <td>1</td>
+            <td>1</td>
+            <td>fronta treku</td>
+          </tr>
+          <tr>
+              <td><a href="#notification">notification</a></td>
+            <td>xs:complexType</td>
+            <td>1</td>
+            <td>1</td>
+            <td>oznameni</td>
+          </tr>
+          <tr>
+            <td><a href="#proxy">proxy</a></td>
+            <td>xs:complexType</td>
+            <td>1</td>
+            <td>1</td>
+            <td>proxy</td>
+          </tr>
+            <tr>
+            <td><a href="#nextAd">nextAd</a></td>
+            <td>xs:complexType</td>
+            <td>1</td>
+            <td>1</td>
+            <td>reklama</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="account table table-hover" id="account">
+        <caption>account</caption>
+        <thead>
+          <tr class="info">
+            <th>name</th>
+            <th>type</th>
+            <th>minOccurs</th>
+            <th>maxOccurs</th>
+            <th>informace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>type</td>
+            <td><a href="#typeAccount">typeAccount</a></td>
+            <td>1</td>
+            <td>1</td>
+            <td>druh uctu</td>
+          </tr>
+          <tr>
+            <td>orderID</td>
+            <td>xs:positiveInteger</td>
+            <td>0</td>
+            <td>1</td>
+            <td>cislo objednavky</td>
+          </tr>
+          <tr>
+            <td>memberNumber</td>
+            <td><a href="#familyMember">familyMember</a></td>
+            <td>0</td>
+            <td>1</td>
+           <td>ucet je muzou pouzivat nekolik osob(do 5 lidi)</td>
+          </tr>
+          <tr>
+            <td>paymentmMethod</td>
+              <td><a href="#payMethod">payMethod</a></td>
+            <td>0</td>
+            <td>1</td>
+            <td>zpusob platby</td>
+          </tr>
+          <tr>
+            <td>expirationDate</td>
+            <td>xs:date</td>
+            <td>0</td>
+            <td>1</td>
+            <td>do kdy predplatne</td>
+          </tr>
+            <tr>
+            <td>useThisMonth</td>
+            <td>xs:boolean</td>
+            <td>0</td>
+            <td>1</td>
+            <td>pouziva se pro pripad pokud uzivatel bude chtit zrusit predplatne</td>
+          </tr>
+            <tr>
+            <td>maxBitrate</td>
+            <td><a href="#bitrate">bitrate</a></td>
+            <td>1</td>
+            <td>1</td>
+            <td>pri koupeni predplatneho zvetsi se pocet biratu</td>
+          </tr>
+            <tr>
+            <td>unavailableTracks</td>
+            <td>xs:boolean</td>
+            <td>1</td>
+            <td>1</td>
+            <td>ma pristup k "vip" hudbe nebo ne</td>
+          </tr>
+            <tr>
+            <td>listenOffline</td>
+            <td>xs:boolean</td>
+            <td>1</td>
+            <td>1</td>
+            <td>da se poslouchat hudbu offline</td>
+          </tr>
+            <tr>
+            <td>cache</td>
+            <td>xs:string</td>
+            <td>1</td>
+            <td>1</td>
+            <td>misto pro cache</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="fm table table-hover" id="lastFmScrobbling">
+        <caption>lastFmScrobbling</caption>
+        <thead>
+          <tr class="info">
+            <th>name</th>
+            <th>type</th>
+            <th>minOccurs</th>
+            <th>maxOccurs</th>
+            <th>informace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>lastFmAccount</td>
+            <td>xs:string</td>
+            <td>1</td>
+            <td>1</td>
+            <td>ucet na LastFM</td>
+          </tr>
+          <tr>
+            <td>periodicity</td>
+            <td><a href="#periodicity">periodicity</a></td>
+            <td>1</td>
+            <td>1</td>
+            <td>jak casto posylat statisticke udaje</td>
+          </tr>
+          <tr>
+            <td>via</td>
+            <td><a href="#connection">connection</a></td>
+            <td>1</td>
+            <td>2</td>
+            <td>jak posylat udaje</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <table class="use table table-hover" id="lastUseSettings">
+        <caption>lastUseSettings</caption>
+        <thead>
+          <tr class="info">
+            <th>name</th>
+            <th>type</th>
+            <th>informace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#playlist">playlist</a></td>
+            <td>xs:complexType</td>
+            <td>playlist</td>
+          </tr>
+          <tr>
+            <td><a href="track">track</a></td>
+            <td>xs:complexType</td>
+            <td>postledni track</td>
+          </tr>
+          <tr>
+            <td>durationPause</td>
+            <td><a href="#duration">duration</a></td>
+            <td>misto na kterem trak byl se zastaven naposled</td>
+          </tr>
+          <tr>
+            <td>volume</td>
+            <td><a href="#volume">volume</a></td>
+            <td>hlasitost ktera byla naposled nastavena</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="notification table table-hover" id="notification">
+        <caption>notification</caption>
+        <thead>
+          <tr class="info">
+            <th>name</th>
+            <th>type</th>
+            <th>informace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>notificationEmail</td>
+            <td>xs:boolean</td>
+            <td>posylat oznameni mailem</td>
+          </tr>
+          <tr>
+            <td>notificationPush</td>
+            <td>xs:boolean</td>
+            <td>zobrazovat oznameni na lokskrinu smartfonu</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="proxy table table-hover" id="proxy">
+        <caption>proxy</caption>
+        <thead>
+          <tr class="info">
+            <th>name</th>
+            <th>type</th>
+            <th>informace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>proxyType</td>
+            <td><a href="#proxy1">proxy</a></td>
+            <td>druh proxy</td>
+          </tr>
+          <tr>
+            <td>ip</td>
+            <td><a href="#ip">ip</a></td>
+            <td>ip proxy</td>
+          </tr>
+          <tr>
+            <td>port</td>
+            <td><a href="#port">port</a></td>
+            <td>port proxy</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="nextAd table table-hover" id="nextAd">
+        <caption>nextAd</caption>
+        <thead>
+          <tr class="info">
+            <th>name</th>
+            <th>type</th>
+            <th>informace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>playAfterTracks</td>
+            <td>xs:positiveInteger</td>
+            <td>ukazovat inzerat po kazdem treku</td>
+          </tr>
+          <tr>
+            <td>adDuration</td>
+            <td>xs:duration</td>
+            <td>delka reklamy</td>
+          </tr>
+          <tr>
+            <td>adVolume</td>
+            <td><a href="#volume">volume</a></td>
+            <td>hlasitost</td>
+          </tr>
+          <tr>
+            <td>url</td>
+            <td>xs:anyURI</td>
+            <td>odkaz na inzerovany produkt</td>
+          </tr>
+          <tr>
+            <td>image</td>
+            <td>xs:anyURI</td>
+            <td>odkaz na inzerovany produkt</td>
+          </tr>
+        </tbody>
+      </table>
+          
+
+      <h2 id="type">Types</h2>
+      <div class="typeAccount panel panel-default" id="typeAccount">
+        <div class="panel-heading">typeAccount</div>
+        <div class="panel-body">
+            Ma 3 druhy:
+          <ul>
+            <li>Premium</li>
+            <li>Free</li>
+            <li>Premium for family</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="familyMember panel panel-default" id="familyMember">
+        <div class="panel-heading">familyMember</div>
+        <div class="panel-body">
+          <ul>
+            <li>nabyva hodnot od 1 do 5 (vcetne)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="payMethod panel panel-default" id="payMethod">
+        <div class="panel-heading">payMethod</div>
+        <div class="panel-body">
+            Zpusob platby:
+          <ul>
+            <li>Card</li>
+            <li>PayPal</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bitrate panel panel-default" id="bitrate">
+        <div class="panel-heading">bitrate</div>
+        <div class="panel-body">
+            Nabyva hodnot:
+          <ul>
+            <li>128</li>
+            <li>384</li>
+            <li>512</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="volume panel panel-default" id="volume">
+        <div class="panel-heading">volume</div>
+        <div class="panel-body">
+          <ul>
+            <li>cislo v intervalu od 0 do 100 (vcetne)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="periodicity panel panel-default" id="periodicity">
+        <div class="panel-heading">periodicity</div>
+        <div class="panel-body">
+          <ul>
+            <li>every track</li>
+            <li>every day</li>
+            <li>every hour</li>
+            <li>every 10 tracks</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="connection panel panel-default" id="connection">
+        <div class="panel-heading">connection</div>
+        <div class="panel-body">
+          Je mozne predavat data pres:
+          <ul>
+            <li>WI-FI</li>
+            <li>data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="crossfade panel panel-default" id="crossfade">
+        <div class="panel-heading">crossfade</div>
+        <div class="panel-body">
+          <ul>
+            <li>Muze nabyvat hodnot v intervalu od 1000 do 15000</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="repeat panel panel-default" id="repeat">
+        <div class="panel-heading">repeat</div>
+        <div class="panel-body">
+          Muze nabyvat hodnot:
+          <ul>
+            <li>off</li>
+            <li>song</li>
+            <li>playlist</li>
+            <li>next playlist</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="snuffle panel panel-default" id="snuffle">
+        <div class="panel-heading">snuffle</div>
+        <div class="panel-body">
+          Muze nabyvat hodnot:
+          <ul>
+            <li>off</li>
+            <li>songs</li>
+            <li>playlists</li>
+            <li>all</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="proxy1 panel panel-default" id="proxy1">
+        <div class="panel-heading">proxy</div>
+        <div class="panel-body">
+          Muze nabyvat hodnot:
+          <ul>
+            <li>HTTP</li>
+            <li>HTTPS</li>
+            <li>SOCKS4</li>
+            <li>SOCKS5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ip panel panel-default" id="ip">
+        <div class="panel-heading">ip</div>
+        <div class="panel-body">
+          <ul>
+            <li>Regularni vyraz, maska pro ip ve tvaru - 000.00.000.000</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="port panel panel-default" id="port">
+        <div class="panel-heading">port</div>
+        <div class="panel-body">
+          <ul>
+            <li>Muze nabyvat hodnot v intervalu od 0 do 65535</li>
+          </ul>
+        </div>
+      </div>
+  </main>
+
+  <footer id="footer">
+      <div class="col-md-4"> <p class="lal">Arakelov Vsevolod<br>Copyright &copy;2017</p></div>
+    
+  </footer>
+</div>
+
+</body>
+</html>
